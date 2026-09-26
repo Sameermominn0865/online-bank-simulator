@@ -7,5 +7,17 @@
 <body>
     <h1>Online Bank Simulator</h1>
     <p th:text="${message}">Welcome</p>
+    <p th:if="${loginError}" th:text="${loginError}"></p>
+    <p th:if="${logoutMessage}" th:text="${logoutMessage}"></p>
+    <form th:action="@{/login}" method="post">
+        <p>
+            <label>Username <input name="username" required></label>
+        </p>
+        <p>
+            <label>Password <input type="password" name="password" required></label>
+        </p>
+        <button type="submit">Sign in</button>
+    </form>
+    <p><a href="/signup">Sign up</a></p>
 </body>
 </html>
